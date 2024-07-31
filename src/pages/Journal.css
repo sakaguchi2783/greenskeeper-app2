@@ -1,0 +1,82 @@
+/* src/pages/Journal.css */
+.journal-container {
+    padding: 20px;
+  }
+  
+  .entry-form {
+    margin-top: 20px;
+  }
+  
+  .entry-form h2 {
+    margin-bottom: 10px;
+  }
+  
+  .entry-form div {
+    margin-bottom: 15px;
+  }
+  
+  .entry-form input,
+  .entry-form select,
+  .entry-form textarea {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+  }
+  
+  .entry-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .entry-form button:hover {
+    background-color: #45a049;
+  }
+  
+  .entries-list {
+    margin-top: 30px;
+  }
+  
+  .entry-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .entry-item h3 {
+    margin: 0;
+    font-size: 1.2em;
+  }
+  
+  .entry-item p {
+    margin: 5px 0;
+  }
+  
+  /* src/pages/Journal.css */
+
+/* 日付の数字を大きくする */
+.rbc-date-cell {
+    font-size: 1.2rem; /* フォントサイズを調整 */
+  }
+  
+  /* 日付枠全体のクリック可能エリアを広げる */
+  .rbc-day-bg {
+    cursor: pointer; /* クリック可能なカーソル */
+    transition: background-color 0.2s; /* 背景色のトランジション */
+  }
+  
+  .rbc-day-bg:hover {
+    background-color: rgba(173, 216, 230, 0.3); /* 薄い青色 */
+  }
+  
+  .rbc-selected {
+    background-color: rgba(173, 216, 230, 0.5); /* クリック後の薄い青色 */
+  }
+  
