@@ -1,0 +1,26 @@
+/* メニューバーのスタイル設定 */
+.menu-bar {
+    display: flex; /* フレックスボックスレイアウトを使用 */
+    justify-content: space-around; /* 各メニューアイテムを均等に配置 */
+    background-color: rgb(210, 207, 172); /* 背景色を設定 */
+    padding: 15px 0; /* 上下に30pxの余白を追加 */
+  }
+  
+  /* メニューアイテムのスタイル設定 */
+  .menu-item {
+    text-align: center; /* テキストを中央揃え */
+    text-decoration: none; /* テキストの下線を削除 */
+    color: #333; /* テキストの色を設定 */
+    font-size: 12px; /* テキストのサイズを小さく設定 */
+    display: flex; /* フレックスボックスレイアウトを使用 */
+    flex-direction: column; /* アイコンの下にテキストを表示 */
+    align-items: center; /* アイテムを中央揃え */
+  }
+  
+  /* メニューアイコンのスタイル設定 */
+  .menu-icon {
+    width: 60px; /* 幅を40pxに設定 */
+    height: 60px; /* 高さを40pxに設定 */
+    margin-bottom: 5px; /* 下に5pxの余白を追加 */
+  }
+  

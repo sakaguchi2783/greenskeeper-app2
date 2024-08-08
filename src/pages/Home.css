@@ -1,28 +1,28 @@
 /* src/pages/Home.css */
 .home-container {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 10px;
   }
   
   .home-image {
-    width: 50%;
+    width: 80%;
     max-width: 400px;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   
   .home-button {
-    padding: 10px 20px;
+    padding: 20px 45px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #4CAF50;
+    background-color: #424141;
     color: white;
     border: none;
     border-radius: 5px;
   }
   
   .home-button:hover {
-    background-color: #45a049;
+    background-color: #171817;
   }
   
   .home-message {
