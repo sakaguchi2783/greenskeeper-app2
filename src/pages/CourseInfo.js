@@ -1,13 +1,13 @@
 // src/pages/CourseInfo.js
-import React, { useState } from 'react';
+import React from 'react';
 import './CourseInfo.css';
 
 const CourseInfo = () => {
-  const [courseInfo, setCourseInfo] = useState([
+  const courseInfo = [
     { hole: '1', par: '4', distance: '450' },
     { hole: '2', par: '3', distance: '150' },
     // 他のホールの情報もここに追加できます
-  ]);
+  ];
 
   return (
     <div className="course-info-container">

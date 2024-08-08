@@ -1,9 +1,9 @@
 // src/pages/AnnualSchedule.js
-import React, { useState } from 'react';
+import React from 'react';
 import './AnnualSchedule.css';
 
 const AnnualSchedule = () => {
-  const [schedule, setSchedule] = useState([
+  const schedule = [
     { month: '1月', tasks: '肥料 新価格\n砂値上げ' },
     { month: '2月', tasks: '除草' },
     { month: '3月', tasks: '除草（ラウンドアップ）' },
@@ -16,7 +16,7 @@ const AnnualSchedule = () => {
     { month: '10月', tasks: '更新作業\n・エアレーション\n・コア除去\n・目砂\n・すり込み\n・散水' },
     { month: '11月', tasks: '工事案件' },
     { month: '12月', tasks: '冬季作業' }
-  ]);
+  ];
 
   return (
     <div className="annual-schedule-container">
