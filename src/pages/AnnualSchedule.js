@@ -1,5 +1,6 @@
 // src/pages/AnnualSchedule.js
 import React, { useState } from 'react';
+import './AnnualSchedule.css';
 
 const AnnualSchedule = () => {
   const [schedule, setSchedule] = useState([
@@ -17,24 +18,27 @@ const AnnualSchedule = () => {
     { month: '12月', tasks: '冬季作業' }
   ]);
 
-  const handleEdit = (index, event) => {
-    const newSchedule = [...schedule];
-    newSchedule[index].tasks = event.target.value;
-    setSchedule(newSchedule);
-  };
-
   return (
-    <div>
-      <h2>年間スケジュール</h2>
-      {schedule.map((item, index) => (
-        <div key={index}>
-          <h3>{item.month}</h3>
-          <textarea
-            value={item.tasks}
-            onChange={(e) => handleEdit(index, e)}
-          />
-        </div>
-      ))}
+    <div className="annual-schedule-container">
+      <h1>年間スケジュール</h1>
+      <table className="annual-schedule-table">
+        <thead>
+          <tr>
+            <th>月</th>
+            <th>作業内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          {schedule.map((item, index) => (
+            <tr key={index}>
+              <td>{item.month}</td>
+              <td>{item.tasks.split('\n').map((task, idx) => (
+                <div key={idx}>{task}</div>
+              ))}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

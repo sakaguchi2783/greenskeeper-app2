@@ -1,17 +1,16 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import Journal from './pages/Journal';
 import AnnualSchedule from './pages/AnnualSchedule';
 import CourseInfo from './pages/CourseInfo';
-import './index.css';
+import './App.css';
 
-function App() {
+const App = () => {
   return (
     <Router>
       <div>
-        <nav>
+        <nav className="navbar">
           <ul>
             <li>
               <Link to="/">ホーム</Link>
@@ -36,7 +35,6 @@ function App() {
       </div>
     </Router>
   );
-}
+};
 
 export default App;
-

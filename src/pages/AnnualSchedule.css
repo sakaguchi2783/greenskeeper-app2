@@ -1,0 +1,32 @@
+/* src/pages/AnnualSchedule.css */
+.annual-schedule-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .annual-schedule-table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .annual-schedule-table th, .annual-schedule-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    white-space: pre-wrap; /* 改行を保持するために追加 */
+  }
+  
+  .annual-schedule-table th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .annual-schedule-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .annual-schedule-table tr:hover {
+    background-color: #ddd;
+  }
+  

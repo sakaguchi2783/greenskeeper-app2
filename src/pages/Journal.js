@@ -6,11 +6,29 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { supabase } from '../supabaseClient';
 import './Journal.css';
 
-// moment.jsを使用してカレンダーをローカライズ
+// 日本語のローカライズ設定を追加
+import 'moment/locale/ja';
+moment.locale('ja');
+
 const localizer = momentLocalizer(moment);
 
+const messages = {
+  allDay: '終日',
+  previous: '前',
+  next: '次',
+  today: '今日',
+  month: '月',
+  week: '週',
+  day: '日',
+  agenda: '予定',
+  date: '日付',
+  time: '時間',
+  event: 'イベント',
+  noEventsInRange: '範囲内にイベントはありません。',
+  showMore: total => `さらに表示 (${total})`
+};
+
 const Journal = () => {
-  // 選択された日付とその日のエントリーデータを保持するステートを定義
   const [selectedDate, setSelectedDate] = useState(null);
   const [entry, setEntry] = useState({
     weather: { temperature: '', humidity: '', rainfall: '', windSpeed: '', notes: '' },
@@ -23,24 +41,19 @@ const Journal = () => {
     staff: { name: '', task: '', notes: '' },
     special: { incidents: '' }
   });
-  
-  // すべてのエントリーとカレンダーのイベントを保持するステートを定義
   const [entries, setEntries] = useState([]);
   const [events, setEvents] = useState([]);
 
-  // コンポーネントのマウント時にジャーナルエントリーを取得する
   useEffect(() => {
     fetchJournalEntries();
   }, []);
 
-  // Supabaseからジャーナルエントリーを取得する関数
   const fetchJournalEntries = async () => {
     const { data, error } = await supabase.from('journal_entries').select('*');
     if (error) {
       console.error('Error fetching entries:', error);
     } else {
       setEntries(data);
-      // カレンダーに表示するイベントを設定
       const newEvents = data.map((entry) => ({
         title: `日誌`,
         start: new Date(entry.date),
@@ -51,17 +64,14 @@ const Journal = () => {
     }
   };
 
-  // カレンダーの日付をクリックしたときに呼ばれる関数
   const handleDateClick = (slotInfo) => {
     setSelectedDate(slotInfo.start);
-    // 選択された日付のエントリーを検索
     const selectedEntry = entries.find(entry => 
       new Date(entry.date).toDateString() === slotInfo.start.toDateString()
     );
     if (selectedEntry) {
       setEntry(selectedEntry);
     } else {
-      // 新規エントリーの場合は空のエントリーを設定
       setEntry({
         weather: { temperature: '', humidity: '', rainfall: '', windSpeed: '', notes: '' },
         grass: { density: '', color: '', disease: '', notes: '' },
@@ -76,7 +86,6 @@ const Journal = () => {
     }
   };
 
-  // 入力フィールドの値が変更されたときに呼ばれる関数
   const handleInputChange = (section, field, value) => {
     setEntry(prev => ({
       ...prev,
@@ -87,7 +96,6 @@ const Journal = () => {
     }));
   };
 
-  // エントリーを保存する関数
   const saveJournalEntry = async () => {
     if (selectedDate) {
       const { data, error } = await supabase
@@ -108,7 +116,7 @@ const Journal = () => {
         console.error('Error saving entry:', error);
       } else {
         console.log('Entry saved:', data);
-        fetchJournalEntries(); // 更新されたデータを取得して表示
+        fetchJournalEntries();
       }
     }
   };
@@ -125,6 +133,7 @@ const Journal = () => {
         onSelectSlot={handleDateClick}
         selectable
         selected={selectedDate} // 選択された日付を強調
+        messages={messages} // カスタムメッセージを追加
       />
       {selectedDate && (
         <div className="entry-form">

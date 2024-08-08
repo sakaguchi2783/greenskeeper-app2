@@ -1,0 +1,30 @@
+/* src/pages/CourseInfo.css */
+.course-info-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .course-info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .course-info-table th, .course-info-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .course-info-table th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .course-info-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .course-info-table tr:hover {
+    background-color: #ddd;
+  }
+  

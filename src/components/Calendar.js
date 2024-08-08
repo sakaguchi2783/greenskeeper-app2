@@ -16,6 +16,7 @@ const MyCalendar = ({ events, onDateClick }) => {
       style={{ height: 500 }}
       onSelectSlot={slotInfo => onDateClick(slotInfo.start)}
       selectable
+      
     />
   );
 };
