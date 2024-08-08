@@ -124,6 +124,8 @@ const Journal = () => {
   return (
     <div className="journal-container">
       <h1>日誌モード</h1>
+      <h5>（カレンダー日付をタップ☟して下にスクロールしてください）</h5>
+      <h5>（その日の記録を行えます）</h5>
       <Calendar
         localizer={localizer}
         events={events}
